@@ -112,15 +112,21 @@
 
         </div>
 
-    <div class="links">
-            <img src="./svg/logo-github.svg" alt="Github-icon">
-            <img src="./svg/logo-insta.svg" alt="Insta-icon">
-            <img src="./svg/logo-linkedin.svg" alt="Linkedin-icon">
+       <!-- target=_blank abre a tela em outra guia -->
+        <div class="links">
+           <a href="https://github.com/GuiMenoti" target="_blank"><img src="./svg/logo-github.svg" alt=""> </a>
+           <a href="https://www.linkedin.com/in/guilherme-menoti-32a898249" target="_blank" ><img src="./svg/logo-linkedin.svg" alt=""> </a>
+           <a href="https://www.instagram.com/guimenoti/" target="_blank" ><img src="./svg/logo-insta.svg" alt=""> </a>
+
         </div>
+    
+   
 
 
 
      </div>
+
+    
 
      <div class="container-boll">
         <div class="bolhas">
@@ -251,7 +257,7 @@
           </h4>
 
           <div class="buttom-cta">
-            <button class="botão-cta">curriculo</button>
+            <a href="https://drive.google.com/file/d/18n2c1JPaxAnSd2KcUeDDRPBYGGCPlwpQ/view?usp=sharing"  target="_blank" ><button class="botão-cta">curriculo</button></a>
           </div>
         
         </div>
@@ -260,10 +266,60 @@
     </section>
     <!--End About-->
 
+
+    <!--Video-->
+    <section id="videoo">
+
+
+    <div class="modal">
+        <a href="#" class="btn">Um pouco sobre mim</a>
+        <div class="video-container">
+            <span class="close"> &#10006;</span>
+            <video src="./video/potifolio.mp4" controls></video>
+
+        </div>
+      
+    
+        
+        
+         
+
+        
+
+
+    </div>
+
+    <script>
+    const btn = document.querySelector('.btn');
+
+const videoContainer = document.querySelector('.video-container'); 
+
+const close = document.querySelector('.close')
+
+
+btn.addEventListener('click',() =>{
+ videoContainer.classList.add('show');
+})
+
+close.addEventListener('click',()=>{
+ videoContainer.classList.remove('show');
+})
+
+    </script>
+
+
+
+    </section>
+    <!--End Video-->
+
     <!--projects-->
     <section id="projects">
         <div class="projects-title">
             <h2>PROJETOS 👨‍💻</h2>
+        </div>
+
+        <div class="animi">
+            <canvas id='c'></canvas>
         </div>
 
         
@@ -390,7 +446,53 @@
                 <div class="swiper-pagination"></div>
              
             </div>
+            <div class="projeto-text">
+                <h1 id="text-excreve"> </h1>
+
+                <script>
+                    const textoOriginal = "PROJETOS DE PROGRAMAÇÃO TRANSFORMAM IDEIAS EM REALIDADE DIGITAL.";
+
+// Obtém o elemento de parágrafo onde o texto será exibido
+const textoEscritoElemento = document.getElementById("text-excreve");
+
+// Função para simular o efeito de máquina de escrever
+function escreverTexto() {
+    let textoEscrito = '';
+    let contador = 0;
+    const intervalo = 100; // Intervalo em milissegundos entre cada letra
+
+    // Função para adicionar uma letra ao texto escrito a cada intervalo
+    function adicionarLetra() {
+        textoEscrito += textoOriginal.charAt(contador);
+        textoEscritoElemento.textContent = textoEscrito;
+        contador++;
+
+        if (contador < textoOriginal.length) {
+            setTimeout(adicionarLetra, intervalo);
+        }
+    }
+
+    // Inicia o efeito de máquina de escrever
+    adicionarLetra();
+}
+ 
+// Chama a função para iniciar o efeito de máquina de escrever quando a página for carregada
+window.onload = escreverTexto;
+
+function fazerTextoDesaparecer() {
+            var textoElemento = document.getElementById('text-excreve');
+            textoElemento.style.display = 'none';
+        }
+
+        // Chama a função após um certo tempo (por exemplo, 5 segundos)
+        setTimeout(fazerTextoDesaparecer, 10000);
+
+       
+                </script>
+            </div>
+            
         </div>
+        
            
         
         
